@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/black">
 
     <ImageView
@@ -12,12 +11,87 @@
         android:layout_height="250dp"
         android:src="@drawable/bcn_la_sagrada_familia"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/description_image_preview"/>
+        android:contentDescription="@string/description_image_preview" />
+
+    <ImageView
+        android:id="@+id/iv_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_pin_drop_24"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@id/iv_preview" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barcelona, Spain"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/iv_pin"
+        android:layout_alignBottom="@id/iv_preview" />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/person"
+        android:layout_marginStart="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/iv_preview"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/iv_preview"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_download_24"
+            android:background="@android:color/transparent"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/heart"
+            android:background="@android:color/transparent"
+            app:tint="@android:color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+        <ImageButton
+            android:id="@+id/btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_bookmark_border_24"
+            android:background="@android:color/transparent"
+            app:tint="@android:color/white" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/buttons_layout"
         android:padding="16dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -235,8 +309,41 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:background="@android:color/background_light"/>
-
         <include layout="@layout/image_info"/>
-
     </LinearLayout>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginStart="16dp"
+        android:gravity="start"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_barcelona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barcelona"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/button_background"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btn_spain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spain"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/button_background"/>
+    </LinearLayout>
+</RelativeLayout>
