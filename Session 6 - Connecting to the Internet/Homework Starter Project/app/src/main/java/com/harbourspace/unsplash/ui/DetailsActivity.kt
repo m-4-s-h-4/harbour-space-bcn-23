@@ -154,6 +154,7 @@ fun ImageSection() {
                 modifier = Modifier.size(30.dp),
                 painter = painterResource(id = R.drawable.ic_pin),
                 contentDescription = stringResource(id = R.string.description_pin_icon),
+                tint = Color.White
 
             )
 
@@ -163,6 +164,7 @@ fun ImageSection() {
                 text = stringResource(R.string.location),
 
                 fontSize = 24.sp,
+                color = Color.White,
                 modifier = Modifier.align(Alignment.CenterVertically)
             )
         }
@@ -177,7 +179,7 @@ fun AvatarAndIconRow() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
+        horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
@@ -186,11 +188,22 @@ fun AvatarAndIconRow() {
             modifier = Modifier.size(50.dp)
         )
 
+        Spacer(modifier = Modifier.width(16.dp))
+
+        Text(
+            text = "Maria B",
+            fontSize = 20.sp,
+            color = Color.White
+        )
+
+        Spacer(modifier = Modifier.weight(1f))
+
         Row {
             Icon(
                 painter = painterResource(R.drawable.ic_like),
                 contentDescription = stringResource(R.string.like_icon),
-                modifier = Modifier.size(25.dp)
+                modifier = Modifier.size(25.dp),
+                tint = Color.White
             )
 
             Spacer(modifier = Modifier.width(16.dp))
@@ -198,7 +211,8 @@ fun AvatarAndIconRow() {
             Icon(
                 painter = painterResource(R.drawable.ic_bookmark),
                 contentDescription = stringResource(R.string.bookmark_icon),
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(30.dp),
+                tint = Color.White
             )
 
             Spacer(modifier = Modifier.width(16.dp))
@@ -206,11 +220,13 @@ fun AvatarAndIconRow() {
             Icon(
                 painter = painterResource(R.drawable.ic_download),
                 contentDescription = stringResource(R.string.download_icon),
-                modifier = Modifier.size(30.dp) //i made icons different size because to make them visiually similar
+                modifier = Modifier.size(30.dp),
+                tint = Color.White
             )
         }
     }
 }
+
 @Composable
 fun InfoRow(
     title1: String,
@@ -265,12 +281,14 @@ fun AddImageInformation(
         text = title,
         fontSize = 17.sp,
         fontWeight = FontWeight.Bold,
+        color = Color.White
 
     )
 
     Text(
         text = subtitle,
         fontSize = 15.sp,
+        color = Color.White
 
     )
 }
